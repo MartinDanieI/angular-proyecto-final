@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <h1 class="text-center text-dark" style="margin-top: 20px;">Registro Usuario</h1>
+    <form [formGroup]="registroForm" (ngSubmit)="registrarUsuario" class="registro" style="margin-top: 20px;">
+        <div class="mb-3">
+            <label for="nombre" class="form-label fs-4" style="color: #000000;" >Ingrese su nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('nombre')?.hasError('required') && registroForm.get('nombre')?.touched">Nombre del usuario obligatorio</div>
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('nombre')?.hasError('minlength') && registroForm.get('nombre')?.touched"> El nombre debe de contener como mínimo 3 caracteres</div>
+
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label fs-4" style="color: #000000;">Ingrese su apellido</label>
+            <input type="text" class="form-control" id="apellido" formControlName="apellido">
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('apellido')?.hasError('required') && registroForm.get('apellido')?.touched">Apellido del usuario obligatorio</div>
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('apellido')?.hasError('minlength') && registroForm.get('apellido')?.touched">El nombre debe de contener como mínimo 3 caracteres</div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label fs-4" style="color: #000000;">Ingrese su correo electrónico</label>
+            <input type="email" class="form-control" id="email" formControlName="correo">
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('correo')?.hasError('required') && registroForm.get('correo')?.touched">EL corre es obligatorio</div>
+            <div class="text-danger fw-bold fs-6" *ngIf="registroForm.get('correo')?.hasError('pattern') && registroForm.get('correo')?.touched">El correo no es valido</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label fs-4" style="color: #000000;">Ingrese su contraseña</label>
+            <input type="password" class="form-control" id="password">
+
+        </div>
+        <p class="fs-6" style="color: #000000;">Estoy de acuerdo con los <a href="#">Términos y condiciones</a></p>
+        <button class="btn">
+            Registrar
+        </button>
+        <p class="fs-6"><a href="#">¿Ya tienes cuenta?</a></p>
+    </form>
+</div>

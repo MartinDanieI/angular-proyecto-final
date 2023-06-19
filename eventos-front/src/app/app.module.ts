@@ -8,6 +8,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { Error404Component } from './components/error404/error404.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { IniciaSesionComponent } from './components/inicia-sesion/inicia-sesion.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
         NavbarComponent,
         Error404Component,
         RegistroUsuarioComponent,
+        IniciaSesionComponent,
 
     ],
     imports: [
